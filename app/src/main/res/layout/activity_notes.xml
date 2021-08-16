@@ -1,9 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/unsplash4"
     tools:context=".NotesActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BE222121">
+
+        <RelativeLayout
+            android:id="@+id/top_header_add_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/saveBtnNotes"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_margin="20dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_baseline_check_circle_24" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="20dp"
+                android:autoSizeTextType="uniform"
+                android:breakStrategy="balanced"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Notes Page"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/settingsBtnNotes"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="20dp"
+                android:src="@drawable/settings" />
+
+        </RelativeLayout>
+
+        <com.moutamid.themotivitaionhub.AppCompatLineEditText
+            android:id="@+id/notesEdittext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/savedNotesBtn"
+            android:layout_below="@id/top_header_add_post"
+            android:layout_marginBottom="20dp"
+            android:background="#F6C15A"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="top"
+            android:hint="Your note's text resides here..."
+            android:padding="15dp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/savedNotesBtn"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="55dp"
+            android:text="Saved Notes"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/black" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

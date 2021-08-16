@@ -37,7 +37,7 @@ public class QuotesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quotes);
-
+        Log.d(TAG, "onCreate: ");
         quoteTextView = findViewById(R.id.quoteTextView);
         quoteAuthorTextView = findViewById(R.id.quoteAuthorTextview);
 
@@ -50,6 +50,7 @@ public class QuotesActivity extends AppCompatActivity {
         });
 
         if (!Utils.getString("date").equals(getDate())) {
+            Log.d(TAG, "onCreate:         if (!Utils.getString(\"date\").equals(getDate())) {\n");
             GetQuote getQuote = new GetQuote();
             getQuote.execute();
             return;
@@ -57,6 +58,7 @@ public class QuotesActivity extends AppCompatActivity {
 
         quoteTextView.setText(Utils.getString("quote"));
         quoteAuthorTextView.setText(Utils.getString("author"));
+        Log.d(TAG, "onCreate: finished");
     }
 
 
@@ -73,7 +75,7 @@ public class QuotesActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
+            Log.d(TAG, "onPreExecute: ");
             progressDialog = new ProgressDialog(context);
             progressDialog.setCancelable(false);
             progressDialog.setMessage("Loading...");
@@ -83,13 +85,13 @@ public class QuotesActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... strings) {
             HttpHandler sh = new HttpHandler();
-
+            Log.d(TAG, "doInBackground: ");
 //            String url = "https://www.youtube.com/oembed?format=json&url=" + id;//https://www.youtube.com/watch?v=" + id;
             String url = "https://zenquotes.io/api/today";
 
             // Making a request to url and getting response
             String jsonStr = sh.makeServiceCall(url);
-
+            Log.d(TAG, "\n\n\ndoInBackground: "+jsonStr+"\n\n\n");
             return jsonStr;
 
 //            return null;
@@ -104,7 +106,7 @@ public class QuotesActivity extends AppCompatActivity {
             String quoteStr = "null";
             String authorStr = "null";
 
-            Log.e(TAG, "Response from url: " + jsonStr);
+            Log.d(TAG, "Response from url: " + jsonStr);
 
             if (jsonStr != null) {
                 try {
@@ -126,6 +128,9 @@ public class QuotesActivity extends AppCompatActivity {
                     quoteStr = object.getString("q");
                     authorStr = object.getString("a");
 
+                    Log.d(TAG, "onPostExecute: quote:"+quoteStr);
+                    Log.d(TAG, "onPostExecute: author:"+authorStr);
+                    
                     store("date", getDate());
                     store("quote", quoteStr);
                     store("author", authorStr);
@@ -159,7 +164,7 @@ public class QuotesActivity extends AppCompatActivity {
 
             }
             progressDialog.dismiss();
-
+            Log.d(TAG, "onPostExecute: finished");
         }
     }
 

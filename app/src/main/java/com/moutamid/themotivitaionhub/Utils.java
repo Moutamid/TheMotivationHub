@@ -16,7 +16,9 @@ import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class Utils {
 
@@ -231,21 +233,17 @@ public class Utils {
         }
     }
 
-    //    public void storeArrayList(Context context, String name, ArrayList<String> arrayList) {
-//        sharedPreferences = context.getSharedPreferences(PACKAGE_NAME, Context.MODE_PRIVATE);
-//        SharedPreferences.Editor edit = sharedPreferences.edit();
-//        Set<String> set = new HashSet<>(arrayList);
-//        edit.putStringSet(name, set);
-//        edit.apply();
-//    }
-//
-//    public ArrayList<String> getStoredArrayList(Context context, String name) {
-//        sharedPreferences = context.getSharedPreferences(PACKAGE_NAME, Context.MODE_PRIVATE);
-//        Set<String> defaultSet = new HashSet<>();
-//        defaultSet.add("Error");
-//        Set<String> set = sharedPreferences.getStringSet(name, defaultSet);
-//        return new ArrayList<>(set);
-//    }
+    public static void store(String name, ArrayList<String> arrayList) {
+        Set<String> set = new HashSet<>(arrayList);
+        utils.sp.edit().putStringSet(name, set).apply();
+    }
+
+    public static ArrayList<String> getArrayList(String name) {
+        Set<String> defaultSet = new HashSet<>();
+        defaultSet.add("Error");
+        Set<String> set = utils.sp.getStringSet(name, defaultSet);
+        return new ArrayList<>(set);
+    }
 
     public String getRandomNmbr(int length) {
         return String.valueOf(new Random().nextInt(length) + 1);

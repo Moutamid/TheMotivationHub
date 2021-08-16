@@ -31,6 +31,7 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/settingsBtnVideo"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_alignParentEnd="true"
@@ -56,6 +57,7 @@
                 android:textSize="30sp" />
 
             <hb.xvideoplayer.MxVideoPlayerWidget
+                android:id="@+id/videoplayerspeededitor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
