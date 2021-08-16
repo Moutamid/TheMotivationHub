@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/unsplash1"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BE222121">
+        <!--        android:background="#95222121">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottomlayout"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="20dp"
+                android:autoSizeTextType="uniform"
+                android:breakStrategy="balanced"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="The Motivation Hub"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/biceps" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <ImageView
+                    android:id="@+id/quotesBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/quote" />
+
+                <ImageView
+                    android:id="@+id/videoBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/video" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_weight="1"
+                    android:id="@+id/notesBtn"
+                    android:src="@drawable/notes" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:id="@+id/settingsBtn"
+                    android:layout_weight="1"
+                    android:src="@drawable/settings" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

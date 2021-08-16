@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/unsplash4"
+    tools:context=".SettingsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BE222121">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="20dp"
+                android:autoSizeTextType="uniform"
+                android:breakStrategy="balanced"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Settings"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/backBtnSettings"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="20dp"
+                android:rotation="270"
+                android:src="@drawable/ic_baseline_arrow_drop_down_circle_24" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="20dp"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="250dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Notifications On"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/black" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="250dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Help"
+                android:layout_marginVertical="20dp"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/black" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="250dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Report an issue"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/black" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
