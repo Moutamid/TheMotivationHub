@@ -40,4 +40,12 @@ dependencies {
 
     //VIDEO PLAYER
     implementation 'com.henryblue.mxvideoplayer:xvideoplayer:1.2.1'
+
+//    implementation 'com.github.HamidrezaAmz:MagicalExoPlayer:X.X.X'
+
+//    implementation 'com.github.khizar1556.MKVideoPlayer:mkvideoplayer:0.1.5'
+
+    // YouTube Player View
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.3'
+
 }

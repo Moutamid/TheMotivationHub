@@ -56,12 +56,22 @@
                 android:textColor="@color/white"
                 android:textSize="30sp" />
 
-            <hb.xvideoplayer.MxVideoPlayerWidget
-                android:id="@+id/videoplayerspeededitor"
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:id="@+id/youtube_player_view_fragment_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="20dp"
+                app:enableAutomaticInitialization="true"
+                app:handleNetworkEvents="true"
+                app:showFullScreenButton="false" />
+
+            <!--            <hb.xvideoplayer.MxVideoPlayerWidget-->
+            <!--                android:id="@+id/videoplayerspeededitor"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginHorizontal="20dp"-->
+            <!--                android:layout_marginTop="20dp" />-->
 
         </LinearLayout>
 
