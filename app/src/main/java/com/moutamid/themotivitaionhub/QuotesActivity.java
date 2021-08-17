@@ -49,6 +49,8 @@ public class QuotesActivity extends AppCompatActivity {
             }
         });
 
+        // EVERY DAY A NEW REQUEST US TRIGGERED
+        // HERE CHECKING IF TODAY IS A NEW DAY THEN A A NEW QUOTE WILL GET DOWNLOADED INTO MEMORY
         if (!Utils.getString("date").equals(getDate())) {
             Log.d(TAG, "onCreate:         if (!Utils.getString(\"date\").equals(getDate())) {\n");
             GetQuote getQuote = new GetQuote();
@@ -61,16 +63,10 @@ public class QuotesActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: finished");
     }
 
-
+// THIS IS THE CLASS WHICH IS USED TO DOWNLOAD A QUOTE FROM AN API
     private class GetQuote extends AsyncTask<String, Void, String> {
 
-        //        private String id;
-//
-//        public void setId(String id) {
-//            this.id = id;
-//        }
         private ProgressDialog progressDialog;
-
 
         @Override
         protected void onPreExecute() {
@@ -130,7 +126,8 @@ public class QuotesActivity extends AppCompatActivity {
 
                     Log.d(TAG, "onPostExecute: quote:"+quoteStr);
                     Log.d(TAG, "onPostExecute: author:"+authorStr);
-                    
+
+                    // STORING THE QUOTE AND AUTHOR NAME IN MEMORY
                     store("date", getDate());
                     store("quote", quoteStr);
                     store("author", authorStr);
@@ -168,6 +165,7 @@ public class QuotesActivity extends AppCompatActivity {
         }
     }
 
+    // THIS IS THE CLASS WHICH IS USED TO CONNECT TO THE API WEBSITE
     private static class HttpHandler {
 
 //        private String TAG = "HttpHandler";

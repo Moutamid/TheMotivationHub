@@ -48,6 +48,7 @@ public class NotesActivity extends AppCompatActivity {
                     return;
                 }
 
+                // THIS IS THE ARRAY LIST STORED IN THE SHARED PREFERENCES
                 ArrayList<String> arrayList = getArrayList(Constants.NOTES_LIST);
                 if (arrayList.get(0).equals("Error")) {
                     ArrayList<String> notesArrayList = new ArrayList<>();
@@ -74,6 +75,7 @@ public class NotesActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // THIS IS USED WHEN A USER TYPES SOMETHING IN THE NOTES THEN THE SAVE BUTTON APPEARS
                 saveNotesBtn.setVisibility(View.VISIBLE);
 
             }

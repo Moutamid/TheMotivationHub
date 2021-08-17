@@ -24,7 +24,7 @@ public class VideoActivity extends AppCompatActivity {
     private static final String TAG = "VideoActivity";
     private Context context = VideoActivity.this;
 
-    private MxVideoPlayerWidget videoPlayer;
+//    private MxVideoPlayerWidget videoPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,8 @@ public class VideoActivity extends AppCompatActivity {
             }
         });
 
+        // WHEN EVER A USER OPEN THIS ACTIVITY
+        // THEN IT WILL PLAY A NEXT VIDEO FROM THE LINKS
         int count = getInt(Constants.COUNTER, 0);
         Log.d(TAG, "onCreate: count " + count);
         String link;
@@ -57,10 +59,7 @@ public class VideoActivity extends AppCompatActivity {
 
         youTubePlayerView = findViewById(R.id.youtube_player_view_fragment_view);
         initYoutubePlayer(link);
-        Log.d(TAG, "onCreate: link " + link);
-//        videoPlayer = findViewById(R.id.videoplayerspeededitor);
-//        videoPlayer.startPlay(link, MxVideoPlayer.SCREEN_LAYOUT_NORMAL, "");
-        Log.d(TAG, "onCreate: finished");
+
     }
 
     private YouTubePlayer youTubePlayer1;
@@ -133,20 +132,7 @@ public class VideoActivity extends AppCompatActivity {
 //        getVideoTitle.execute();
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-//        MxVideoPlayer.releaseAllVideos();
-    }
-
-    @Override
-    public void onBackPressed() {
-//        if (MxVideoPlayer.backPress()) {
-//            return;
-//        }
-        super.onBackPressed();
-    }
-
+    // THIS IS USED TO GET THE VIDEO ID FROM A YOUTUBE VIDEO URL
     private static String getVideoId(String videoUrl) {
         String videoId = "";
         String regex = "http(?:s)?:\\/\\/(?:m.)?(?:www\\.)?youtu(?:\\.be\\/|be\\.com\\/(?:watch\\?(?:feature=youtu.be\\&)?v=|v\\/|embed\\/|user\\/(?:[\\w#]+\\/)+))([^&#?\\n]+)";
